@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hogwarts Sorting House</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="mainname">Hogwarts Sorting House</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="design.html">About Us</a>
+            <a href="designproduct.html">Design Product</a>
+            <a href="product.html">Product</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="text">
+            <h1>Welcome To Our Website</h1>
+            <h2>Discover your Hogwarts house from the GOAT Harry Potter movie or series</h2>
+        </div>
+    </section>
+</body>
+</html>
