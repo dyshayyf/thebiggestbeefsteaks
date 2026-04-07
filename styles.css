@@ -27,14 +27,18 @@ nav a {
     margin: 15px;
 }
 .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 80px;
-    }
+  display: flex;
+  align-items: center;
+  padding: 80px;
+}
+
+.hero-img {
+  width: 300px;
+  height: auto;
+}
 
 .text {
-  width: 50%;
+  max-width: 600px;
 }
 
 .text h1 {
