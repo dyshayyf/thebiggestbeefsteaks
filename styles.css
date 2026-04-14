@@ -75,25 +75,24 @@ nav a {
   animation: float 3s ease-in-out infinite;
 }
 
-
+/* FLOAT ANIMATION */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0); }
 }
 
-
+/* PAGE 2 */
 .houses {
   min-height: 100vh;
   background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.houses p {
-  margin: 0;
-  padding-top: 20px;
-  text-align: center;
-  color: papayawhip;
-  font-size: 35px;
-  line-height: 1.4;
-  font-family: 'IM Fell English SC', serif;
+.houses h1 {
+  font-size: 100px;
+  color: black;
+  font-family: 'Cinzel Decorative', serif;
 }
