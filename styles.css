@@ -62,14 +62,6 @@ nav a {
   text-shadow: 0 0 20px rgba(255,255,255,0.5);
 }
 
-.left p {
-  margin-top: 20px;
-  color: papayawhip;
-  font-size: 35px;
-  line-height: 1.4;
-  font-family: 'IM Fell English SC', serif;
-}
-
 .center img {
   width: 450px;
   animation: float 3s ease-in-out infinite;
@@ -86,13 +78,14 @@ nav a {
 .houses {
   min-height: 100vh;
   background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.houses h1 {
-  font-size: 100px;
-  color: black;
-  font-family: 'Cinzel Decorative', serif;
+.houses p {
+  margin: 0;
+  padding-top: 20px;
+  text-align: center;
+  color: papayawhip;
+  font-size: 35px;
+  line-height: 1.4;
+  font-family: 'IM Fell English SC', serif;
 }
