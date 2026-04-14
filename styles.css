@@ -89,3 +89,40 @@ nav a {
   line-height: 1.4;
   font-family: 'IM Fell English SC', serif;
 }
+
+input[type="radio"] {
+    display: none;
+}
+
+/* logo row */
+.house-logos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 60px;   /* turun ke bawah */
+    margin-bottom: 50px;
+}
+
+/* clickable logo box */
+.house-logos label {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* logos */
+.house-logos img {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.house-logos img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px gold);
+}
