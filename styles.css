@@ -94,35 +94,44 @@ input[type="radio"] {
     display: none;
 }
 
-/* logo row */
 .house-logos {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 60px;   /* turun ke bawah */
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
-/* clickable logo box */
-.house-logos label {
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* logos */
 .house-logos img {
-    width: 170px;
-    height: 170px;
-    object-fit: contain;
+    width: 100px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .house-logos img:hover {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 10px gold);
+}
+
+.house-cards img {
+    width: 350px;
+    display: none;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* show selected card */
+#gryffindor:checked ~ .house-cards .gryffindor-card {
+    display: block;
+}
+
+#slytherin:checked ~ .house-cards .slytherin-card {
+    display: block;
+}
+
+#ravenclaw:checked ~ .house-cards .ravenclaw-card {
+    display: block;
+}
+
+#hufflepuff:checked ~ .house-cards .hufflepuff-card {
+    display: block;
 }
