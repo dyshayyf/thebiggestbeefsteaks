@@ -6,67 +6,75 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
 body {
-  background-image: url("background.gif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: url("background.gif") center/cover no-repeat fixed;
 }
 
+/* NAVBAR */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 80px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
-  color: white;
-  font-size: 25px;
-
+  position: relative;
+  z-index: 10;
 }
 
-@import url('https://fonts.cdnfonts.com/css/harry-p');
-
 .mainname {
-  font-size: 60px;
+  font-size: 55px;
   color: white;
   font-family: 'Harry P', sans-serif;
 }
 
 nav a {
   color: white;
-  margin: 20px;
+  margin-left: 25px;
+  text-decoration: none;
+  font-size: 22px;
   font-family: 'IM Fell English SC', serif;
 }
 
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 80px;
-  background: rgba(0,0,0,0.35);
-  background-image: url("background.gif");
-  background-size: cover;
-  background-position: center;
+  align-items: center;
+  padding: 60px 80px;
 }
 
-.info-section {
-  background: white;
-  min-height: 100vh;
-  padding: 100px;
-  color: black;
+.left {
+  max-width: 650px;
 }
 
-.hero-img {
-  width: 400px;
-  margin-left: auto; 
+.left h1 {
+  font-size: 85px;
+  color: white;
+  line-height: 1.1;
+  font-family: 'Cinzel Decorative', serif;
+  text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.left p {
+  margin-top: 20px;
+  color: papayawhip;
+  font-size: 35px;
+  line-height: 1.4;
+  font-family: 'IM Fell English SC', serif;
+}
+
+.center img {
+  width: 450px;
   animation: float 3s ease-in-out infinite;
 }
+
 
 @keyframes float {
   0% { transform: translateY(0); }
@@ -74,21 +82,18 @@ nav a {
   100% { transform: translateY(0); }
 }
 
-.text {
-  max-width: 600px;
+
+.houses {
+  min-height: 100vh;
+  background: white;
 }
 
-.text h1 {
-    font-size: 70px;
-    color: white;
-    text-shadow: 0 0 20px rgba(255,255,255,0.6);
-    font-family: 'Cinzel Decorative', serif;
-}
-
-.text h2 {
+.houses p {
+  margin: 0;
+  padding-top: 20px;
+  text-align: center;
   color: papayawhip;
-  font-size: 40px;
-  margin: 10px 0;
+  font-size: 35px;
+  line-height: 1.4;
   font-family: 'IM Fell English SC', serif;
 }
-
