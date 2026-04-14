@@ -94,16 +94,19 @@ input[type="radio"] {
     display: none;
 }
 
-.house-logos {
+.house-logos label {
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 40px;
+    align-items: center;
 }
 
+/* logos */
 .house-logos img {
-    width: 220px;
-    height: 220px;
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
     cursor: pointer;
     transition: 0.3s;
 }
