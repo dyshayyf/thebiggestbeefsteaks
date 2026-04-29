@@ -15,7 +15,7 @@ body {
   background: url("background.gif") center/cover no-repeat fixed;
 }
 
-/* NAVBAR */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -41,7 +41,6 @@ nav a {
   font-family: 'IM Fell English SC', serif;
 }
 
-/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -67,45 +66,42 @@ nav a {
   animation: float 3s ease-in-out infinite;
 }
 
-/* FLOAT ANIMATION */
+
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0); }
 }
 
-/* PAGE 2 */
 .houses {
   min-height: 100vh;
   background: #1C2E4A;
 }
 
+
 .houses p {
-  margin: 0;
-  padding-top: 20px;
-  text-align: center;
   color: papayawhip;
   font-size: 35px;
   line-height: 1.4;
   font-family: 'IM Fell English SC', serif;
+  padding-top: 40px;
+  text-align: center;
 }
 
 input[type="radio"] {
     display: none;
 }
 
-.house-logos label {
-    width: 200px;
-    height: 200px;
+.house-logos {
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 30px;
+    margin-top: 80px;
 }
 
-/* logos */
 .house-logos img {
-    width: 180px;
-    height: 180px;
+    width: 270px;
+    height: 270px;
     object-fit: contain;
     cursor: pointer;
     transition: 0.3s;
@@ -113,29 +109,4 @@ input[type="radio"] {
 
 .house-logos img:hover {
     transform: scale(1.1);
-}
-
-.house-cards img {
-    width: 350px;
-    display: none;
-    margin: auto;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* show selected card */
-#gryffindor:checked ~ .house-cards .gryffindor-card {
-    display: block;
-}
-
-#slytherin:checked ~ .house-cards .slytherin-card {
-    display: block;
-}
-
-#ravenclaw:checked ~ .house-cards .ravenclaw-card {
-    display: block;
-}
-
-#hufflepuff:checked ~ .house-cards .hufflepuff-card {
-    display: block;
 }
