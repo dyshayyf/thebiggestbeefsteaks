@@ -13,7 +13,11 @@
 </head>
 
 <body>
+    <audio id="bgmusic" autoplay loop hidden preload="auto">
+        <source src="music/mainsong.mp3" type="audio/mpeg">
+    </audio>
 
+<script src="script.js"></script>
     <header>
 
         <div class="mainname">
@@ -38,55 +42,37 @@
                 TO OUR <br>
                 WEBSITE
             </h1>
-
         </div>
 
         <div class="center">
-
             <img src="img/house.png" alt="Hogwarts Logo">
-
         </div>
-
     </section>
 
-
     <section class="houses">
-
         <p>
             Discover your Hogwarts house from <br>
             the GOAT Harry Potter movie or series
         </p>
-
-
         <input type="radio" name="house" id="gryffindor" checked>
-
         <input type="radio" name="house" id="slytherin">
-
         <input type="radio" name="house" id="ravenclaw">
-
         <input type="radio" name="house" id="hufflepuff">
-
         <div class="house-content">
 
-
             <div class="house-logos">
-
                 <label for="gryffindor">
                     <img src="img/gryffindor-logo.png" alt="Gryffindor">
                 </label>
-
                 <label for="slytherin">
                     <img src="img/slytherin-logo.png" alt="Slytherin">
                 </label>
-
                 <label for="ravenclaw">
                     <img src="img/ravenclaw-logo.png" alt="Ravenclaw">
                 </label>
-
                 <label for="hufflepuff">
                     <img src="img/hufflepuff-logo.png" alt="Hufflepuff">
                 </label>
-
             </div>
 
             <!-- HOUSE CARDS -->
@@ -114,7 +100,6 @@
         </div>
 
     </section>
-
 </body>
 
 </html>
