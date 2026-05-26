@@ -17,8 +17,6 @@
         <source src="music/mainsong.mp3" type="audio/mpeg">
     </audio>
 
-<script src="script.js"></script>
-
     <header>
 
         <div class="mainname">
@@ -31,6 +29,306 @@
             <a href="designproduct.html">Design Product</a>
             <a href="product.html">Product</a>
         </nav>
-
     </header>
-</html>
+
+    <!-- QUIZ PAGE -->
+
+    <div class="quiz-page">
+        <section class="quiz">
+            <!-- LANGUAGE -->
+            <div id="languageSelect" class="question-box">
+                <h1>Hogwarts House Quiz</h1>
+                <h2 class="lang-text">
+                    Enter the language you want to use
+                </h2>
+                <div class="answers">
+                    <button onclick="setLanguage('english')">
+                        English
+                    </button>
+                    <button onclick="setLanguage('bahasa')">
+                        Bahasa
+                    </button>
+                </div>
+            </div>
+
+            <!-- QUIZ -->
+            <div id="quizContainer" class="question-box" style="display:none;">
+                <h2 id="question"></h2>
+                <div id="answers" class="answers"></div>
+            </div>
+
+            <!-- RESULT -->
+            <h2 id="result"></h2>
+        </section>
+    </div>
+
+<script>
+
+let g = 0;
+let r = 0;
+let h = 0;
+let s = 0;
+
+let currentQuestion = 0;
+let bhs = "";
+
+// ================= ENGLISH =================
+const englishQuestions = [
+  {
+    question: "1. Choose a super power you would find useful:",
+    answers: [
+      "Super strength or invulnerability",
+      "Omniscience (knowing everything in the universe)",
+      "The ability to heal any injury or illness",
+      "The ability to read minds"
+    ]
+  },
+  {
+    question: "2. If you could claim ownership of one magical item, which would you choose?",
+    answers: [
+      "The Invisibility Cloak — move unseen",
+      "A Time-Turner —manipulate hours, finish all your tasks and gain time to study.",
+      "A wand — focus your magical studies and help others through daily charms.",
+      "A Horcrux — secure your own immortality and safeguard your future at any cost. "
+    ]
+  },
+  {
+    question: "3. What do you consider to be your absolute biggest personal flaw?",
+    answers: [
+      "Reckless and impulsive",
+      "Arrogant and detached",
+      "Too trusting",
+      "Overly ambitious"
+    ]
+  },
+  {
+    question: "4. Which potion would you choose?",
+    answers: [
+      "Felix Felicis (Liquid Luck) — take daring, high-stakes gambles.",
+      "Amortentia (Love Potion) — study the complex psychology of attraction.",
+      "Elixir of Life — protect your loved ones from sickness and age.",
+      "Polyjuice Potion — spy, infiltrate, and manipulate situations unseen.  "
+    ]
+  },
+  {
+    question: "5. Which magical creature as a pet?",
+    answers: [
+      "A loyal Hippogriff that requires respect and bravery to tame.",
+      "A wise Owl that can help you deliver messages and sort information.",
+      "A gentle Kneazle (magical cat) that loves cuddling and comfort.",
+      "A rare, highly intelligent Serpent that obeys only you."
+    ]
+  },
+  {
+    question: "6. You are studying for final exams. What does your study routine look like?",
+    answers: [
+      "Last-minute intense study",
+      "Organized and detailed",
+      "Group study",
+      "Strategic studying"
+    ]
+  },
+  {
+    question: "7. Draco insults your family. You...",
+    answers: [
+      "Challenge him to a duel",
+      "Destroy him with words",
+      "Ignore him",
+      "Plan revenge"
+    ]
+  },
+  {
+    question: "8. Which Hogwarts class is your favorite?",
+    answers: [
+      "Defense Against Dark Arts — you love the practical, thrilling action.",
+      "Ancient Runes — you love solving complex historical mysteries.",
+      "Herbology — you love working with your hands and nurturing things.",
+      "Potions — you love the precision, power, and subtlety of brewing."
+    ]
+  },
+  {
+    question: "9. What kind of reputation do you want to leave behind?",
+    answers: [
+      "Brave hero",
+      "Academic genius",
+      "Loyal friend",
+      "Powerful leader"
+    ]
+  },
+  {
+    question: "10. What is your biggest fear?",
+    answers: [
+      "Being called a coward",
+      "Being seen as stupid",
+      "Being alone",
+      "Failing to reach your goals"
+    ]
+  }
+];
+
+// ================= BAHASA =================
+const bahasaQuestions = [
+  {
+    question: "1. Pilih kekuatan super yang kamu inginkan:",
+    answers: [
+      "Kekuatan super",
+      "Mengetahui segala sesuatu di alam semesta",
+      "Penyembuhan",
+      "Bisa membaca pikiran"
+    ]
+  },
+  {
+    question: "2. Jika kamu dapat memiliki satu benda sihir, mana yang akan kamu pilih?",
+    answers: [
+      "Jubah Gaib — bergerak tanpa terlihat",
+      "Pemutar Waktu — memanipulasi waktu secara efisien dan mendapatkan waktu untuk belajar.",
+      "Tongkat Sihir — memfokuskan studi sihirmu dan membantu orang lain melalui mantra harian.",
+      "Horcrux — menjadi abadi dan melindungi masa depan kamu dengan segala cara."
+    ]
+  },
+  {
+    question: "3. Apa kelemahan terbesarmu?",
+    answers: [
+      "Ceroboh",
+      "Sombong",
+      "Terlalu mudah percaya orang lain",
+      "Terlalu ambisius"
+    ]
+  },
+  {
+    question: "4. Jika kamu dapat meracik ramuan apa pun, ramuan mana yang akan kamu pilih?",
+    answers: [
+      "Felix Felicis (Cairan Keberuntungan) — untuk berjudi online dengan taruhan tinggi.",
+      "Amortentia (Ramuan Cinta) — mempelajari psikologi kompleks tentang daya tarik.",
+      "Elixir Kehidupan — melindungi orang yang kamu cintai dari penyakit dan penuaan.",
+      "Polyjuice Potion — menyamar, menyelundup, dan memanipulasi situasi tanpa terlihat."
+    ]
+  },
+  {
+    question: "5. Makhluk ajaib mana yang akan kamu pilih sebagai hewan peliharaan?",
+    answers: [
+      "Hippogriff setia yang butuh keberanian untuk dijinakkan.",
+      "Burung Hantu yang bijak dan pengetahuan luas.",
+      "Kneazle (kucing ajaib) yang lembut dan penuh kasih sayang.",
+      "Ular yang cerdas dan penuh misteri."
+    ]
+  },
+  {
+    question: "6. Seperti apa rutinitas belajarmu?",
+    answers: [
+      "Sistem kebut semalam",
+      "Rapi dan terjadwal",
+      "Belajar kelompok",
+      "Strategis"
+    ]
+  },
+  {
+    question: "7. Draco Malfoy menghina keluargamu di koridor Hogwarts. Bagaimana reaksimu?",
+    answers: [
+      "Tantang dia berduel",
+      "Balas dengan kata tajam",
+      "Abaikan",
+      "Balas diam-diam"
+    ]
+  },
+  {
+    question: "8. Kelas mana yang merupakan kelas favoritmu di Hogwarts?",
+    answers: [
+      "Pertahanan Ilmu Hitam —kamu suka aksi praktis dan mendebarkan.",
+      "Runes Kuno — kamu suka memecahkan misteri sejarah yang kompleks.",
+      "Herbologi — kamu suka bekerja dengan tangan dan merawat makhluk hidup.",
+      "Ramuan — kamu suka presisi, kekuatan, dan meracik ramuan."
+    ]
+  },
+  {
+    question: "9. Reputasi seperti apa yang ingin kamu tinggalkan?",
+    answers: [
+      "Pahlawan berani",
+      "Jenius",
+      "Teman setia",
+      "Pemimpin kuat"
+    ]
+  },
+  {
+    question: "10. Apa ketakutan terbesarmu?",
+    answers: [
+      "Dianggap pengecut",
+      "Dianggap bodoh",
+      "Kesepian",
+      "Gagal mencapai tujuan"
+    ]
+  }
+];
+
+// ================= LANGUAGE =================
+function setLanguage(language) {
+  bhs = language;
+
+  document.getElementById("languageSelect").style.display = "none";
+  document.getElementById("quizContainer").style.display = "block";
+
+  currentQuestion = 0;
+  g = 0; r = 0; h = 0; s = 0;
+
+  showQuestion();
+}
+
+// ================= SHOW QUESTION =================
+function showQuestion() {
+  let data = (bhs === "english") ? englishQuestions : bahasaQuestions;
+  let q = data[currentQuestion];
+
+  document.getElementById("question").innerText = q.question;
+
+  document.getElementById("answers").innerHTML = `
+    <button onclick="answer('a')">a. ${q.answers[0]}</button>
+    <button onclick="answer('b')">b. ${q.answers[1]}</button>
+    <button onclick="answer('c')">c. ${q.answers[2]}</button>
+    <button onclick="answer('d')">d. ${q.answers[3]}</button>
+  `;
+}
+
+// ================= ANSWER =================
+function answer(choice) {
+  if (choice === "a") g++;
+  else if (choice === "b") r++;
+  else if (choice === "c") h++;
+  else if (choice === "d") s++;
+
+  currentQuestion++;
+
+  let data = (bhs === "english") ? englishQuestions : bahasaQuestions;
+
+  if (currentQuestion < data.length) {
+    showQuestion();
+  } else {
+    showResult();
+  }
+}
+
+// ================= RESULT =================
+function showResult() {
+  let result = "";
+
+  if (g > r && g > h && g > s) result = "Gryffindor";
+  else if (r > g && r > h && r > s) result = "Ravenclaw";
+  else if (h > g && h > r && h > s) result = "Hufflepuff";
+  else if (s > g && s > r && s > h) result = "Slytherin";
+  else result = "It's a tie!";
+
+    if (bhs === "english") {
+    title = "Your Hogwarts House is";
+  } else {
+    title = "Hogwarts House Kamu adalah";
+  }
+
+  document.getElementById("quizContainer").innerHTML = `
+    <h1>${title}</h1>
+    <h2 id="result">${result}</h2>
+  `;
+}
+
+</script>
+
+</section>
+</body>
