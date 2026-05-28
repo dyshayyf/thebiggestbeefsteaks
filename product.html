@@ -309,12 +309,28 @@ function answer(choice) {
 // ================= RESULT =================
 function showResult() {
   let result = "";
+  let logo = "";
+  let title = "";
 
-  if (g > r && g > h && g > s) result = "Gryffindor";
-  else if (r > g && r > h && r > s) result = "Ravenclaw";
-  else if (h > g && h > r && h > s) result = "Hufflepuff";
-  else if (s > g && s > r && s > h) result = "Slytherin";
-  else result = "It's a tie!";
+  if (g > r && g > h && g > s){
+    result = "Gryffindor";
+    logo= "img/gryffindor-logo.png";
+  }
+  else if (r > g && r > h && r > s) {
+    result = "Ravenclaw";
+    logo = "img/ravenclaw-logo.png";
+  }
+  else if (h > g && h > r && h > s) {
+    result = "Hufflepuff";
+    logo = "img/hufflepuff-logo.png";
+  }
+  else if (s > g && s > r && s > h) {
+    result = "Slytherin";
+    logo = "img/slytherin-logo.png";
+  }
+  else {
+    result = "It's a tie!";
+  }
 
     if (bhs === "english") {
     title = "Your Hogwarts House is";
@@ -323,13 +339,15 @@ function showResult() {
   }
 
   document.getElementById("quizContainer").innerHTML = `
-    <h1>${title}</h1>
-    <h2 id="result">${result}</h2>
+    <div class="result-box">
+      <h1>${title}</h1>
+      <img src="${logo}" class="house-logo">
+      <h2 id="result">${result}</h2>
+    </div>
   `;
 }
 
 </script>
 
 </section>
-    <script src="script.js"></script>
 </body>
