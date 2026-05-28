@@ -527,3 +527,34 @@ input[type="radio"]{
   font-family: 'Cinzel Decorative', serif;
   text-shadow: 0 0 15px rgba(255,215,0,0.6);
 }
+
+.result-box{
+    text-align: center;
+}
+
+.house-logo{
+    width: 220px;
+    animation: fadeIn 1s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#result{
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
