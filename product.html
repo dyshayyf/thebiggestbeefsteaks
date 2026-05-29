@@ -19,11 +19,20 @@
 
     <header>
 
-        <div class="mainname">
-            Hogwarts House Sorting
+        <div class="header-left">
+            <img src="img/logo.png" class="mini-logo">
+            <div class="mainname">
+                Hogwarts House Sorting
+            </div>
         </div>
 
-        <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="navbar">
             <a href="index.html">Home</a>
             <a href="design.html">About Us</a>
             <a href="designproduct.html">Design Product</a>
@@ -312,27 +321,30 @@ function showResult() {
   let logo = "";
   let title = "";
 
-  if (g > r && g > h && g > s){
+  // Cari skor tertinggi
+  let maxScore = Math.max(g, r, h, s);
+
+  // Prioritas jika tie:
+  // Gryffindor > Ravenclaw > Hufflepuff > Slytherin
+
+  if (g === maxScore) {
     result = "Gryffindor";
-    logo= "img/gryffindor-logo.png";
+    logo = "img/gryffindor-logo.png";
   }
-  else if (r > g && r > h && r > s) {
+  else if (r === maxScore) {
     result = "Ravenclaw";
     logo = "img/ravenclaw-logo.png";
   }
-  else if (h > g && h > r && h > s) {
+  else if (h === maxScore) {
     result = "Hufflepuff";
     logo = "img/hufflepuff-logo.png";
   }
-  else if (s > g && s > r && s > h) {
+  else {
     result = "Slytherin";
     logo = "img/slytherin-logo.png";
   }
-  else {
-    result = "It's a tie!";
-  }
 
-    if (bhs === "english") {
+  if (bhs === "english") {
     title = "Your Hogwarts House is";
   } else {
     title = "Hogwarts House Kamu adalah";
@@ -346,7 +358,14 @@ function showResult() {
     </div>
   `;
 }
+        function toggleMenu(){
 
+        document.getElementById("navbar")
+        .classList.toggle("active");
+
+        document.querySelector(".menu-toggle")
+        .classList.toggle("open");
+        }
 </script>
 
 </section>
