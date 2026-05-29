@@ -20,11 +20,20 @@
 <script src="script.js"></script>
     <header>
 
-        <div class="mainname">
-            Hogwarts House Sorting
+        <div class="header-left">
+            <img src="img/logo.png" class="mini-logo">
+            <div class="mainname">
+                Hogwarts House Sorting
+            </div>
         </div>
 
-        <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <nav id="navbar">
             <a href="index.html">Home</a>
             <a href="design.html">About Us</a>
             <a href="designproduct.html">Design Product</a>
@@ -51,7 +60,7 @@
 
     <section class="houses">
         <p>
-            Discover your Hogwarts house from <br>
+            Discover yo6ur Hogwarts house from <br>
             the GOAT Harry Potter movie or series
         </p>
         <input type="radio" name="house" id="gryffindor" checked>
@@ -94,12 +103,21 @@
                 <img src="img/hufflepuff-card.png"
                      class="hufflepuff-card"
                      alt="Hufflepuff Card">
-
             </div>
-
         </div>
-
     </section>
+
+
+    <script>
+        function toggleMenu(){
+
+        document.getElementById("navbar")
+        .classList.toggle("active");
+
+        document.querySelector(".menu-toggle")
+        .classList.toggle("open");
+        }
+    </script>
 </body>
 
 </html>
