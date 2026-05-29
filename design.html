@@ -20,11 +20,20 @@
 <script src="script.js"></script>
     <header>
 
-        <div class="mainname">
-            Hogwarts House Sorting
+        <div class="header-left">
+            <img src="img/logo.png" class="mini-logo">
+            <div class="mainname">
+                Hogwarts House Sorting
+            </div>
         </div>
 
-        <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="navbar">
             <a href="index.html">Home</a>
             <a href="design.html">About Us</a>
             <a href="designproduct.html">Design Product</a>
@@ -42,5 +51,15 @@
 </div>
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHGFtgkxy8&#x2F;Sf0l2l-ogInmiy8LHypQkQ&#x2F;view?utm_content=DAHGFtgkxy8&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">PKWU harry potter</a> by AUBREY AURELIA HUTAPEA
 
+    <script>
+        function toggleMenu(){
+
+        document.getElementById("navbar")
+        .classList.toggle("active");
+
+        document.querySelector(".menu-toggle")
+        .classList.toggle("open");
+        }
+    </script>
     </body>
 </html>
