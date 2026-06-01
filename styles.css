@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
 
 *{
-    cursor: url("https://dyshayyf.github.io/thebiggestbeefsteaks/img/wand.png") 85 0, auto;
+    cursor: url("/thebiggestbeefsteaks/img/wand.png") 85 0, auto;
 }
 
 .spark{
