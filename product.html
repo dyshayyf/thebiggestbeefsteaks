@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <audio id="bgmusic" autoplay loop hidden preload="auto">
+
+    <audio id="bgmusic" loop hidden preload="auto">
         <source src="music/mainsong.mp3" type="audio/mpeg">
     </audio>
 
@@ -77,6 +78,24 @@
     </button>
 
 <script>
+
+  const music = document.getElementById("bgmusic");
+
+window.addEventListener("load", () => {
+
+    const savedTime = sessionStorage.getItem("music-time");
+
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
+    }
+
+    music.play().catch(() => {});
+});
+
+window.addEventListener("beforeunload", () => {
+    sessionStorage.setItem("music-time", music.currentTime);
+});
+
 document.addEventListener("mousemove", (e) => {
 
     // bikin spark lebih sering (lebih banyak)

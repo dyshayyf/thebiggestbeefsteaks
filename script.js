@@ -2,18 +2,17 @@ const music = document.getElementById("bgmusic");
 
 window.addEventListener("load", () => {
 
-    const savedTime = localStorage.getItem("music-time");
+    const savedTime = sessionStorage.getItem("music-time");
 
-    if(savedTime){
-        music.currentTime = savedTime;
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime);
     }
 
-    music.play();
+    music.play().catch(() => {});
+});
 
-    setInterval(() => {
-        localStorage.setItem("music-time", music.currentTime);
-    }, 1000);
-
+window.addEventListener("beforeunload", () => {
+    sessionStorage.setItem("music-time", music.currentTime);
 });
 
 document.addEventListener("mousemove", (e) => {
