@@ -994,13 +994,11 @@ nav a:hover{
     }
 }
 
-.game-container {
-    width: 900px;
-    height: 700px;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
+.game-container { 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 50px; }
 
 .game-container iframe {
     width: 485px;
