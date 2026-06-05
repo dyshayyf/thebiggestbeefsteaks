@@ -603,32 +603,48 @@ input[type="radio"]{
   0 0 20px rgba(255,215,0,0.5);
 }
 
-#result{
-  text-align: center;
-  margin-top: 40px;
-  font-size: 55px;
-  color: #3d2513;
-  font-family: 'Cinzel Decorative', serif;
-  text-shadow: 0 0 15px rgba(255,215,0,0.6);
+.result-box{
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px;
 }
 
-.result-box{
+.result-title{
+    text-align: center;
+    font-size: 35px;
+    color: #d4af37;
+    font-family: 'Cinzel Decorative', serif;
+    margin-bottom: 40px;
+}
+
+.result-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-text{
+    flex: 1;
+    text-align: left;
+}
+
+.result-logo{
+    flex: 0 0 300px;
     text-align: center;
 }
 
-.house-logo{
-    width: 220px;
-    animation: fadeIn 1s ease;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.house-desc{
     margin-top: 20px;
-    margin-bottom: 20px;
+    max-width: 600px;
+    font-size: 26px;
+    line-height: 1.8;
+    color: #3d2513;
+    font-family: 'IM Fell English SC', serif;
 }
 
-#result{
-    font-size: 50px;
-    margin-top: 10px;
+.house-logo{
+    width: 250px;
+    animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn{
